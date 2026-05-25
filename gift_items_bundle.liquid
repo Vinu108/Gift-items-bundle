@@ -1,0 +1,1437 @@
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<style>
+.bundle-box{
+cursor:pointer;
+}
+
+span.title_badge {
+    background: rgb(234 242 242);
+    font-size: 12px;
+    color: #000;
+    font-weight: 500;
+    padding: 2px 10px;
+    border-radius: 10px;
+}
+.subscription_bundle_wrapperr .wrapper_bundles .bundle-box.active {
+    margin-top: 14px;
+    border: 2px solid rgb(75 153 149);
+    border-radius: 12px;
+    position: relative;
+        background:#fff;
+}
+
+
+
+.subscription_bundle_wrapperr .wrapper_bundles .bundle-box {
+    margin-top: 14px;
+     background: rgb(249 254 255);
+    border: 1px solid #cfe3e0;
+    border-radius: 12px;
+    position: relative;
+    box-shadow: unset;
+}
+
+ .subscription_bundle_wrapperr .wrapper_bundles .bundle-box:hover {
+   border: 2px solid #cfe3e0;
+
+}
+
+  .subscription_bundle_wrapperr .wrapper_bundles .bundle-box.active:hover{
+   border: 2px solid rgb(75 153 149);
+   
+}
+  /* BEST VALUE BADGE */
+.wrapper_bundles .badge {
+    position: absolute;
+    top: -12px;
+    right: 8px;
+    background: #4e8f88;
+    color: #fff;
+    padding: 1px 14px;
+    font-size: 12px;
+    font-weight: 500;
+    margin: 0 8px;
+    padding: 2px 10px;
+    /* border-bottom-left-radius: 5px; */
+    /* border-bottom-right-radius: 5px; */
+    background-color: #4e8f88;
+    color: #fff;
+    border-radius: 4px;
+    letter-spacing: 0;
+    border: unset;
+    text-transform: capitalize;
+}
+{% comment %} .subscription_bundle_wrapperr .wrapper_bundles .bundle-box.active .bundle-top {
+    background: #ffffff;
+} {% endcomment %}
+
+.wrapper_bundles .badge:before {
+    display: block;
+    position: absolute;
+    top: -1px;
+    width: 1px;
+    height: 1px;
+    content: "";
+    border-bottom-width: 13px;
+    border-bottom-style: solid;
+    filter: brightness(.7);
+    left: -7px;
+    border-left: 8px solid transparent;
+    border-bottom-color: #4e8f88;
+}
+
+
+.wrapper_bundles .badge:after {
+    display: block;
+    position: absolute;
+    top: -1px;
+    width: 1px;
+    height: 1px;
+    content: "";
+    border-bottom-width: 13px;
+    border-bottom-style: solid;
+    filter: brightness(.7);
+    right: -7px;
+    border-right: 8px solid transparent;
+    border-bottom-color: #4e8f88;
+}
+
+ .milk-thistile-bundle kaching-bundle{
+display:none;
+}
+.wrapper_bundles {
+    margin: 0 0 15px;
+}
+  /* TOP ROW */
+  .subscription_bundle_wrapperr .wrapper_bundles .bundle-top {
+    display: grid;
+    grid-template-columns: 24px auto auto;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 0px;
+    padding: 12px 15px;
+  
+    border-radius: 8px;
+}
+.bundle-box[data_index="2"] .bundle-top {
+    padding-top: 18px;
+}
+.bundle-box[data_index="3"] .bundle-top {
+    padding-top: 18px;
+}
+.wrapper_bundles .desc{
+width:100%;
+max-width:100%;
+}
+  .wrapper_bundles .product-img img {
+    width: 100%;
+mix-blend-mode: darken !important;
+  }
+
+
+.wrapper_bundles .bundle-info h2 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: #121212e6;
+    line-height: 100%;
+}
+.subscription-text {
+    line-height: 140%;
+}
+
+ .wrapper_bundles .bundle-info .sub {
+    font-size: 14px;
+    font-weight: 300;
+    color: #121212e6;
+    line-height:106%;
+}
+
+
+  .wrapper_bundles .bundle-info .desc {
+    margin-top: 7px;
+    font-size: 16px;
+    color: #303030;
+    font-weight: 300;
+}
+
+
+  /* PRICE BOX */
+  .wrapper_bundles .price-area {
+    text-align: right;
+  }
+
+.wrapper_bundles .price-area .old {
+    text-decoration: line-through;
+    font-size: 13px;
+    color: #ff0000;
+}
+
+.wrapper_bundles .price-area .new {
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+    line-height: 100%;
+}
+
+
+ .wrapper_bundles .save-btn {
+    margin-top: 8px;
+    background: transparent;
+    color: #0a4f18;
+    border: 1px solid #0a4f18;
+    border-radius: 30px;
+    padding: 5px 20px;
+    font-size: 12px;
+    display: inline-block;
+}
+  /* FREE ITEMS */
+  .subscription_bundle_wrapperr .wrapper_bundles .free-item {
+       display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    border-top: 1px solid #000000 !important;
+    background: #000000;
+    display:none;
+  }
+
+
+  .wrapper_bundles .free-item-left {
+    display:flex;
+    align-items:center;
+    gap: 10px;
+    font-size:13px;
+    font-weight:700;
+  }
+
+
+.wrapper_bundles .free-item img {
+    width: 100%;
+    mix-blend-mode: darken !important;
+    max-width: 30px;
+        border-radius: 4px;
+}
+
+
+  .wrapper_bundles .free-item-right {
+    text-align: right;
+    font-size: 12px;
+  }
+
+
+  .wrapper_bundles .free-old {
+    text-decoration: line-through;
+    color:#000;
+    margin-right: 6px;
+  }
+
+
+  .wrapper_bundles .free-free {
+    color:#000;
+    font-weight:700;
+    font-size:14px;
+  }
+ 
+.subscription_bundle_wrapperr .wrapper_price {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    justify-content: end;
+    justify-content: end;
+    align-items: end;
+    flex-direction: column-reverse;
+}
+.free-item-two {
+    border: unset !important;
+    padding-top: 0 !important;
+}
+.kaching-second-bundle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #EBEBE9;
+    border-radius: 0px 0px 14px 14px;
+    font-size: 14px;
+    gap: 8px;
+    color: #000000;
+    font-weight: 800;
+    padding: 10px 0px;
+}
+
+
+.wrapper_second_bundle_box {
+    padding: 10px 20px 0px 20px;
+    border-radius: 0 0 14px 14px;
+}
+.bundle-box.second_bundle_box {
+    padding: 0;
+}
+.bundle-box.second_bundle_box.active {
+
+
+    padding: 0;
+}
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;            /* space between lines and text */
+  width: 100%;
+  padding: 20px 0 0;
+}
+
+
+.banner p {
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+  margin: 0;
+  text-align: center;
+  white-space: nowrap;
+      font-family: 'Poppins', sans-serif;
+}
+
+
+{% comment %} .banner .orange {
+  color: #f50;       /* bright orange like the example */
+} {% endcomment %}
+
+
+
+ .banner .line {
+    flex: 1;
+    height: 2px;
+    background-color: #c5dfdf;
+    max-width: 312px;
+    display: flex;
+}     /* keeps lines short like the screenshot */
+
+.second_bundle_box.active .wrapper_second_bundle_box {
+    background: #fff8e9 !important;
+    border-radius: 14px;
+}
+.bundle-box.second_bundle_box.active {
+    padding: 0;
+}
+.bundle-box.second_bundle_box.active {
+    background: #F79E1B !important;
+}
+.bundle-box.second_bundle_box{
+background:#EBEBE9!important;
+}
+
+
+.bundle-box.second_bundle_box {
+    background: #EBEBE9 !important;
+    padding: 0;
+
+
+    border-color: #fff !important;
+}
+.bundle-box.second_bundle_box.active{
+ border-color: #F79E1B !important;
+}
+.bundle-box.second_bundle_box.active .kaching-second-bundle{
+    background: #F79E1B !important;
+}
+.wrapper_second_bundle_box {
+    background: #fff;
+}
+
+
+.subscription_bundle_wrapperr .bundle-info {
+    display: flex;
+    align-items: center;
+    gap: 4px 6px;
+    flex-wrap: wrap;
+    
+}
+
+
+
+
+
+
+.subscription_bundle_wrapperr .subscription-box {
+    border: 2px dashed rgb(75 153 149);
+    border-radius: 16px;
+    padding: 12px 10px;
+    max-width: 100%;
+    transition: all 0.3s ease;
+    background: rgb(249 254 255);
+    margin: 15px 0px 0px;
+    display: flex !important;
+}
+
+
+.subscription_bundle_wrapperr .subscription-box.active {
+    background: rgb(249 254 255);
+}
+
+
+.subscription_bundle_wrapperr .subscription-label {
+    display: grid;
+    gap: 20px;
+    cursor: pointer;
+    align-items: center;
+    grid-template-columns: 24px 1fr;
+}
+.subscription_bundle_wrapperr .subscription-checkbox {
+  width: 20px;
+  height: 20px;
+  accent-color: #ffffff;
+  margin-top: 4px;
+}
+.subscription_bundle_wrapperr .subscription-checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 24px;
+    height: 24px;
+    border: 2px solid rgb(75 153 149);
+    border-radius: 0px;
+    background: #fff;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+}
+
+.subscription_bundle_wrapperr .subscription-checkbox:checked::after {
+    content: "✔";
+    color:rgb(75 153 149);
+    font-size: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -52%);
+}
+
+
+.subscription_bundle_wrapperr .subscription-content {
+  width: 100%;
+}
+
+
+.subscription_bundle_wrapperr .subscription-text .title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #121212e6;
+}
+
+
+.subscription_bundle_wrapperr .subscription-text .subtitle {
+    font-size: 13px;
+    line-height: 16px;
+    color: #6f6f6f;
+    letter-spacing: 0;
+}
+
+
+.subscription_bundle_wrapperr .subscription-dropdown {
+  margin-top: 14px;
+  display: none;
+}
+
+
+.subscription_bundle_wrapperr .subscription-dropdown select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+
+.subscription-text div {
+    line-height: 16px;
+}
+
+
+.subscription_bundle_wrapperr .bundle-box .product-img {
+    height: 24px;
+    width: 24px;
+    border: 2px solid #c5dfdf;
+    border-radius: 100%;
+    position: relative;
+}
+.subscription_bundle_wrapperr .bundle-box.active .product-img:before {
+    position: absolute;
+    content: '';
+    background: rgb(75 153 149);
+    height: 14px;
+    width: 14px;
+    border-radius: 100%;
+    top: 3px;
+    left: 3px;
+}
+.subscription_bundle_wrapperr .bundle-box.active .product-img {
+    border: 2px solid rgb(75 153 149);
+}
+
+.subscription_bundle_wrapperr .wrapper_bundles .bundle-box[data_index="2"] .free-item {
+    border-radius: 0px 0px 8px 8px;
+}
+
+.subscription_bundle_wrapperr .wrapper_bundles .bundle-box[data_index="3"] .free-item[data_index="2"] {
+    border-radius: 0px 0px 8px 8px;
+    border-top: 1px solid #fff !important;
+}
+.subscription_bundle_wrapperr {
+    width: 100%;
+    max-width: 700px;
+}
+
+.sub {
+    font-size: 13px;
+    color: #555555;
+    margin-top: 3px;
+}
+@media(max-width:1400px){
+.wrapper_bundles .bundle-top {
+   
+    grid-template-columns: 20px auto 174px;
+ 
+    gap: 10px;
+   
+}
+
+
+
+.wrapper_bundles .price-area .old {
+   
+    font-size: 14px;
+   
+}
+}
+
+
+
+
+
+
+@media(max-width:768px){
+
+
+.wrapper_bundles .bundle-top {
+    display: grid;
+    grid-template-columns: 20px auto 213px;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+
+
+
+
+.wrapper_bundles .price-area .old {
+   
+    font-size: 13px;
+   
+}
+
+
+.wrapper_bundles .bundle-info .desc {
+    margin-top: 0px;
+    font-size: 14px;
+    color: #303030;
+    font-weight: 300;
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+@media(max-width:480px){
+
+
+    .wrapper_bundles .bundle-top {
+       
+        grid-template-columns: 20px auto 169px;
+     
+    }
+
+
+
+
+
+.wrapper_bundles .bundle-info .desc {
+       
+        font-size: 12px;
+       
+    }
+
+
+
+
+.wrapper_bundles .free-item-left {
+   
+    font-size: 12px;
+}
+
+
+.banner p {
+
+
+  white-space: wrap;
+}
+.subscription_bundle_wrapperr .wrapper_bundles .bundle-top {
+    padding: 10px 15px;
+
+
+}
+.subscription_bundle_wrapperr .wrapper_bundles .bundle-top {
+ 
+    grid-template-columns: 20px auto 123px;
+}
+{% comment %} .subscription_bundle_wrapperr .bundle-info {
+    gap: 5px;
+
+
+} {% endcomment %}
+.banner {
+   
+    padding: 5px 0;
+}
+.bundle-box[data_index="2"] .bundle-top {
+    padding-top: 18px;
+}
+}
+
+
+
+
+
+<style>
+.gift-section {
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.gift-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+.gift-item {
+
+  border: 2px solid #cfe3e1;
+  border-radius: 16px;
+  padding: 6px;
+  position: relative;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.gift-section h3 {
+    text-align: center;
+    font-size: 20px;
+    font-family: 'DM Sans', sans-serif;
+        margin-bottom: 0;
+}
+.gift-section p {
+    margin: 0;
+    text-align: center;
+    font-size: 16px;
+    font-family: 'DM Sans', sans-serif;
+}
+/* tag */
+.tag {
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #d9d9d9;
+    padding: 4px 8px;
+    font-size: 12px;
+    border-radius: 10px;
+    display: flex;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    max-width: 89px;
+    color: #000;
+}
+
+/* LOCKED STATE */
+.gift-item.locked {
+  background: #eef3f3;
+}
+
+.locked-view {
+  display: block;
+ 
+}
+
+.unlocked-view {
+  display: none;
+}
+
+.lock-icon {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.locked-view p {
+    color: #555555;
+}
+
+
+/* UNLOCKED STATE */
+.gift-item.unlocked {
+  background: #fff;
+  border-color: #4e8f88;
+}
+
+.gift-item.unlocked .locked-view {
+  display: none;
+}
+.gift-item.unlocked .unlocked-view {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.unlocked-view img {
+  width: 90px;
+  
+  display: block;
+}
+
+.unlocked-view p {
+  font-size: 13px;
+}
+
+@media(max-width:500px){
+
+.gift-wrapper {
+    grid-template-columns: 1fr 1fr;
+    gap: 25px 10px;
+}
+
+}
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
+
+
+{%assign product_one = block.settings.product_one %}
+
+{% assign product_one = block.settings.product_one %}
+
+{% assign var_first_id = product_one.variants[0].id %}
+{% assign var_first_price = product_one.variants[0].price %}
+{% assign var_first_compare_at_price = product_one.variants[0].compare_at_price %}
+
+{% assign var_second_id = product_one.variants[1].id %}
+{% assign var_second_price = product_one.variants[1].price %}
+{% assign var_second_compare_at_price = product_one.variants[1].compare_at_price %}
+
+{% assign var_third_id = product_one.variants[2].id %}
+{% assign var_third_price = product_one.variants[2].price %}
+{% assign var_third_compare_at_price = product_one.variants[2].compare_at_price %}
+
+
+
+{%assign sub_product_one = block.settings.sub_product_one %}
+
+
+{% assign sub_var_first_id = sub_product_one.variants[0].id %}
+{% assign sub_var_first_price = sub_product_one.variants[0].price %}
+{% assign sub_var_first_compare_at_price = sub_product_one.variants[0].compare_at_price %}
+
+{% assign sub_var_second_id = sub_product_one.variants[1].id %}
+{% assign sub_var_second_price = sub_product_one.variants[1].price %}
+{% assign sub_var_second_compare_at_price = sub_product_one.variants[1].compare_at_price %}
+
+{% assign sub_var_third_id = sub_product_one.variants[2].id %}
+{% assign sub_var_third_price = sub_product_one.variants[2].price %}
+{% assign sub_var_third_compare_at_price = sub_product_one.variants[2].compare_at_price %}
+
+
+
+
+
+
+
+
+
+
+
+
+{%assign gift_product_one = block.settings.gift_product_one  %}
+{%assign gift_product_two = block.settings.gift_product_two  %}
+{%assign gift_product_three = block.settings.gift_product_three  %}
+
+<div class="subscription_bundle_wrapperr">
+<div class="wrapper_bundles">
+
+
+<div class="banner">
+  <div class="line"></div>
+  <p>
+  NEW YEARS SALE WHILE STOCKS LAST
+
+
+  </p>
+  <div class="line"></div>
+</div>
+
+
+<div class="wrapper_bundles_without_subscripton grid_wrapper_bd">
+
+
+<div class="bundle-box " data_index= "1" var_id="{{var_first_id}}"  >
+ 
+
+
+  <div class="bundle-top">
+    <div class="product-img">
+      {% comment %} <img src="https://cdn.shopify.com/s/files/1/0851/8860/8300/files/Kaching-Bundles-1_2_300x300.png?v=1753378366"> {% endcomment %}
+    </div>
+
+    <div class="bundle-info-wrapper">
+    <div class="bundle-info">
+      <h2>
+Buy 1
+
+ </h2>
+      {% assign discount = var_first_compare_at_price | minus: var_first_price %}
+{% assign save_percent = discount | times: 100 | divided_by: var_first_compare_at_price %}
+   <span class="title_badge">{{save_percent }}% OFF</span><br>
+
+
+     
+    </div>
+          <div class="sub">  30 Day Supply
+</div>
+</div>
+    <div class="price-area">
+      <div class="wrapper_price">
+      <div class="old">{{var_first_compare_at_price | money }}</div>
+      <div class="new">   {{var_first_price | money}}</div>
+   
+     
+</div>
+     
+         
+    </div>
+  </div>
+
+
+</div>
+
+
+<div class="bundle-box " data_index= "2" var_id="{{var_second_id}}" var_id_two="{{gift_product_one.variants.first.id }}"  >
+  <div class="badge">Most Popular</div>
+
+
+  <div class="bundle-top">
+    <div class="product-img">
+      {% comment %} <img src="https://cdn.shopify.com/s/files/1/0851/8860/8300/files/Kaching-Bundles-3_3ef45d5a-2cd3-4705-9cba-b568872abb6b_300x300.png?v=1755816269"> {% endcomment %}
+    </div>
+
+<div class="bundle-info-wrapper">
+    <div class="bundle-info">
+      <h2>
+            
+Buy 2 + Get 1 FREE
+
+                   </h2>
+                        {% assign discount = var_second_compare_at_price | minus:var_second_price %}
+{% assign save_percent = discount | times: 100 | divided_by: var_second_compare_at_price %}
+                     <span class="title_badge">{{save_percent }}% OFF</span><br>
+
+  
+    </div>
+        <div class="sub"> 90 Day Supply
+</div>
+  </div>
+    <div class="price-area">
+      <div class="wrapper_price">
+     <div class="old">{{var_first_compare_at_price | money }}</div>
+      <div class="new">   {{var_second_price | money}}</div>
+</div>
+     
+    </div>
+  </div>
+  <!-- FREE ITEM 1 -->
+  <div class="free-item" data_index="1">
+    <div class="free-item-left">
+     
+      <img src="{{ gift_product_one.featured_image | img_url: 'master' }}" alt="{{ gift_product_one.title }}">
+      <span>{{gift_product_one.title }}</span>
+    </div>
+    <div class="free-item-right">
+      <span class="free-old">{{gift_product_one.price | money  }}</span>
+      
+    </div>
+  </div>
+ 
+
+
+
+
+
+ 
+
+</div>
+
+
+
+
+
+
+
+
+ <div class="bundle-box third_bundle_box " data_index= "3" var_id="{{var_third_id }}" var_id_two="{{gift_product_one.variants.first.id }}" var_id_three="{{gift_product_two.variants.first.id}}" var_id_four="{{gift_product_three.variants.first.id }}">
+  <div class="badge">Best Results</div>
+
+
+  <div class="bundle-top">
+    <div class="product-img">
+      {% comment %} <img src="https://cdn.shopify.com/s/files/1/0851/8860/8300/files/Kaching-Bundles-5_94d283fc-6bc5-46cd-8621-ce42cc86013e_300x300.png?v=1755816328"> {% endcomment %}
+    </div>
+
+<div class="bundle-info-wrapper">
+    <div class="bundle-info">
+      <h2>
+
+Buy 3 + Get 2 FREE
+ </h2>
+   {% assign discount = var_third_compare_at_price  | minus: var_third_price  %}
+{% assign save_percent = discount | times: 100 | divided_by: var_third_compare_at_price  %}
+  <span class="title_badge">{{save_percent }}% OFF</span><br>
+
+
+     
+    </div>
+     <div class="sub">  150 Day Supply
+</div>
+     
+  </div>
+
+    <div class="price-area">
+      <div class="wrapper_price">
+     <div class="old">{{var_third_compare_at_price  | money }}</div>
+      <div class="new">   {{var_third_price | money}}</div>
+</div>
+     
+    </div>
+  </div>
+  <!-- FREE ITEM 1 -->
+  <div class="free-item" data_index="1">
+    <div class="free-item-left">
+     
+       <img src="{{ gift_product_one.featured_image | img_url: 'master' }}" alt="{{ gift_product_one.title }}">
+      <span>{{gift_product_one.title }}</span>
+    </div>
+    <div class="free-item-right">
+      <span class="free-old">{{gift_product_one.price | money  }}</span>
+      
+    </div>
+  </div>
+   <div class="free-item " data_index="2">
+    <div class="free-item-left">
+       <img src="{{ gift_product_two.featured_image | img_url: 'master' }}" alt="{{ gift_product_one.title }}">
+      <span>{{gift_product_two.title }}</span>
+    </div>
+    <div class="free-item-right">
+      <span class="free-old">{{gift_product_two.price | money  }}</span>
+     
+    </div>
+  </div>
+
+
+</div>
+</div>
+
+
+
+
+
+
+<div class="wrapper_bundles_with_subscripton grid_wrapper_bd" style="display:none;">
+
+
+<div class="bundle-box " data_index= "1" var_id="{{sub_var_first_id}}"  >
+ 
+
+
+  <div class="bundle-top">
+    <div class="product-img">
+      {% comment %} <img src="https://cdn.shopify.com/s/files/1/0851/8860/8300/files/Kaching-Bundles-1_2_300x300.png?v=1753378366"> {% endcomment %}
+    </div>
+
+<div class="bundle-info-wrapper">
+
+    <div class="bundle-info">
+      <h2>
+ Buy 1
+
+ </h2>
+   {% assign discount = sub_var_first_compare_at_price | minus: sub_var_first_price %}
+{% assign save_percent = discount | times: 100 | divided_by:sub_var_first_compare_at_price %}
+ <span class="title_badge">{{save_percent }}% OFF</span><br>
+
+
+    </div>
+          <div class="sub">  30 Day Supply
+</div>
+     
+  </div>
+
+    <div class="price-area">
+      <div class="wrapper_price">
+      <div class="old">{{sub_var_first_compare_at_price | money }}</div>
+      <div class="new">   {{sub_var_first_price | money}}</div>
+   
+     
+</div>
+     
+         
+    </div>
+  </div>
+  
+
+</div>
+
+
+<div class="bundle-box " data_index= "2" var_id="{{sub_var_second_id }}" var_id_two="{{gift_product_one.variants.first.id }}"  >
+  <div class="badge">Most Popular</div>
+
+
+  <div class="bundle-top">
+    <div class="product-img">
+      {% comment %} <img src="https://cdn.shopify.com/s/files/1/0851/8860/8300/files/Kaching-Bundles-3_3ef45d5a-2cd3-4705-9cba-b568872abb6b_300x300.png?v=1755816269"> {% endcomment %}
+    </div>
+
+<div class="bundle-info-wrapper">
+ 
+    <div class="bundle-info">
+      <h2>
+Buy 2 + Get 1 FREE
+ </h2>
+ {% assign discount = sub_var_second_compare_at_price  | minus: sub_var_second_price  %}
+{% assign save_percent = discount | times: 100 | divided_by: sub_var_second_compare_at_price  %}
+  <span class="title_badge">{{save_percent }}% OFF</span><br>
+  
+ 
+    </div>
+
+         <div class="sub">  90 Day Supply
+</div>
+  </div>
+
+    <div class="price-area">
+      <div class="wrapper_price">
+     <div class="old">{{sub_var_second_compare_at_price  | money }}</div>
+      <div class="new">   {{sub_var_second_price  | money}}</div>
+</div>
+     
+    </div>
+  </div>
+  <!-- FREE ITEM 1 -->
+  <div class="free-item" data_index="1">
+    <div class="free-item-left">
+     
+      <img src="{{ gift_product_one.featured_image | img_url: 'master' }}" alt="{{ gift_product_one.title }}">
+
+     <span>{{gift_product_one.title }}</span>
+    </div>
+    <div class="free-item-right">
+      <span class="free-old">{{gift_product_one.price | money  }}</span>
+      
+    </div>
+  </div>
+  
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+ <div class="bundle-box third_bundle_box " data_index= "3" var_id="{{sub_var_third_id }}" var_id_two="{{gift_product_one.variants.first.id }}" var_id_three="{{gift_product_two.variants.first.id}}" var_id_four="{{gift_product_three.variants.first.id }}">
+
+<div class="badge">Best Results</div>
+
+  <div class="bundle-top">
+    <div class="product-img">
+      {% comment %} <img src="https://cdn.shopify.com/s/files/1/0851/8860/8300/files/Kaching-Bundles-5_94d283fc-6bc5-46cd-8621-ce42cc86013e_300x300.png?v=1755816328"> {% endcomment %}
+    </div>
+
+<div class="bundle-info-wrapper">
+    <div class="bundle-info">
+            <h2>
+Buy 3 + Get 2 FREE
+
+ </h2>
+  {% assign discount = sub_var_third_compare_at_price | minus: sub_var_third_price%}
+{% assign save_percent = discount | times: 100 | divided_by: sub_var_third_compare_at_price %}
+ <span class="title_badge">{{save_percent }}% OFF</span><br>
+ 
+     
+     
+    </div>
+     <div class="sub">  150 Day Supply
+</div>
+  </div>
+    
+    <div class="price-area">
+      <div class="wrapper_price">
+     <div class="old">{{sub_var_third_compare_at_price | money }}</div>
+      <div class="new">   {{sub_var_third_price | money}}</div>
+</div>
+     
+    </div>
+  </div>
+  <!-- FREE ITEM 1 -->
+  <div class="free-item" data_index="1">
+    <div class="free-item-left">
+     
+      <img src="{{ gift_product_one.featured_image | img_url: 'master' }}" alt="{{ gift_product_one.title }}">
+     <span>{{gift_product_one.title }}</span>
+    </div>
+    <div class="free-item-right">
+      <span class="free-old">{{gift_product_one.price | money  }}</span>
+     
+    </div>
+  </div>
+ 
+  <div class="free-item " data_index="2">
+    <div class="free-item-left">
+       <img src="{{ gift_product_two.featured_image | img_url: 'master' }}" alt="{{ gift_product_one.title }}">
+     <span>{{gift_product_two.title }}</span>
+    </div>
+    <div class="free-item-right">
+      <span class="free-old">{{gift_product_two.price | money  }}</span>
+      
+    </div>
+  </div>
+
+</div>
+</div>
+
+
+<div class="subscription-box" id="subscriptionBox">
+  <label class="subscription-label">
+    <input type="checkbox" id="subscriptionCheck" class="subscription-checkbox" >
+
+
+    <div class="subscription-content">
+      <div class="subscription-text">
+        <span class="title">
+Subscribe & Save 15%</span>
+        <div>
+        <span class="subtitle">This is a recurring subscription. You will be charged every month until you cancel.</span>
+        </div>
+      </div>
+    </div>
+  </label>
+</div>
+
+
+
+
+</div>
+</div>
+
+
+<div class="gift_wrapper_product">
+
+  <div class="gift-section">
+  <h3>🎁 Free gifts with your order</h3>
+  <p>Unlock selecting a higher bundle</p>
+
+  <div class="gift-wrapper">
+
+    <!-- 1 -->
+    <div class="gift-item locked" data_index="1">
+      <span class="tag">FREE <del>$15.00</del></span>
+
+      <div class="locked-view">
+        <div class="lock-icon"><svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M44.584 21H42.834V14C42.834 6.279 36.555 0 28.834 0C21.113 0 14.834 6.279 14.834 14V21H13.084C10.1907 21 7.83398 23.3543 7.83398 26.25V50.75C7.83398 53.6457 10.1907 56 13.084 56H44.584C47.4773 56 49.834 53.6457 49.834 50.75V26.25C49.834 23.3543 47.4773 21 44.584 21ZM19.5007 14C19.5007 8.85267 23.6867 4.66667 28.834 4.66667C33.9813 4.66667 38.1673 8.85267 38.1673 14V21H19.5007V14ZM31.1673 39.018V44.3333C31.1673 45.6213 30.1243 46.6667 28.834 46.6667C27.5436 46.6667 26.5007 45.6213 26.5007 44.3333V39.018C25.1123 38.2083 24.1673 36.7197 24.1673 35C24.1673 32.4263 26.2603 30.3333 28.834 30.3333C31.4076 30.3333 33.5007 32.4263 33.5007 35C33.5007 36.7197 32.5557 38.2083 31.1673 39.018Z" fill="#667085" transform="translate(21.5, 22)"></path></svg></div>
+        <p>Locked</p>
+      </div>
+
+      <div class="unlocked-view">
+        <img src="https://cdn.shopify.com/s/files/1/0653/0629/6425/files/WhiteandBrownSimpleCoverBookMockupInstagramPost_200x200.png?v=1760111059">
+        <p>7-Day Lung Detox Plan</p>
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="gift-item locked" data_index="2">
+      <span class="tag">FREE <del>$9.99</del></span>
+
+      <div class="locked-view">
+        <div class="lock-icon"><svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M44.584 21H42.834V14C42.834 6.279 36.555 0 28.834 0C21.113 0 14.834 6.279 14.834 14V21H13.084C10.1907 21 7.83398 23.3543 7.83398 26.25V50.75C7.83398 53.6457 10.1907 56 13.084 56H44.584C47.4773 56 49.834 53.6457 49.834 50.75V26.25C49.834 23.3543 47.4773 21 44.584 21ZM19.5007 14C19.5007 8.85267 23.6867 4.66667 28.834 4.66667C33.9813 4.66667 38.1673 8.85267 38.1673 14V21H19.5007V14ZM31.1673 39.018V44.3333C31.1673 45.6213 30.1243 46.6667 28.834 46.6667C27.5436 46.6667 26.5007 45.6213 26.5007 44.3333V39.018C25.1123 38.2083 24.1673 36.7197 24.1673 35C24.1673 32.4263 26.2603 30.3333 28.834 30.3333C31.4076 30.3333 33.5007 32.4263 33.5007 35C33.5007 36.7197 32.5557 38.2083 31.1673 39.018Z" fill="#667085" transform="translate(21.5, 22)"></path></svg></div>
+        <p>Locked</p>
+      </div>
+
+      <div class="unlocked-view">
+        <img src="data:image/webp;base64,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">
+        <p>Free Priority shipping</p>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="gift-item locked" data_index="3">
+      <span class="tag">FREE <del>$15.00</del></span>
+
+      <div class="locked-view">
+        <div class="lock-icon"><svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M44.584 21H42.834V14C42.834 6.279 36.555 0 28.834 0C21.113 0 14.834 6.279 14.834 14V21H13.084C10.1907 21 7.83398 23.3543 7.83398 26.25V50.75C7.83398 53.6457 10.1907 56 13.084 56H44.584C47.4773 56 49.834 53.6457 49.834 50.75V26.25C49.834 23.3543 47.4773 21 44.584 21ZM19.5007 14C19.5007 8.85267 23.6867 4.66667 28.834 4.66667C33.9813 4.66667 38.1673 8.85267 38.1673 14V21H19.5007V14ZM31.1673 39.018V44.3333C31.1673 45.6213 30.1243 46.6667 28.834 46.6667C27.5436 46.6667 26.5007 45.6213 26.5007 44.3333V39.018C25.1123 38.2083 24.1673 36.7197 24.1673 35C24.1673 32.4263 26.2603 30.3333 28.834 30.3333C31.4076 30.3333 33.5007 32.4263 33.5007 35C33.5007 36.7197 32.5557 38.2083 31.1673 39.018Z" fill="#667085" transform="translate(21.5, 22)"></path></svg></div>
+        <p>Locked</p>
+      </div>
+
+      <div class="unlocked-view">
+        <img src="https://cdn.shopify.com/s/files/1/0653/0629/6425/files/WhiteandBrownSimpleCoverBookMockupInstagramPost_1_200x200.png?v=1760111310">
+        <p>Lung Health Tracker</p>
+      </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="gift-item locked" data_index="4">
+      <span class="tag">FREE <del>$9.99</del></span>
+
+      <div class="locked-view">
+        <div class="lock-icon"><svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M44.584 21H42.834V14C42.834 6.279 36.555 0 28.834 0C21.113 0 14.834 6.279 14.834 14V21H13.084C10.1907 21 7.83398 23.3543 7.83398 26.25V50.75C7.83398 53.6457 10.1907 56 13.084 56H44.584C47.4773 56 49.834 53.6457 49.834 50.75V26.25C49.834 23.3543 47.4773 21 44.584 21ZM19.5007 14C19.5007 8.85267 23.6867 4.66667 28.834 4.66667C33.9813 4.66667 38.1673 8.85267 38.1673 14V21H19.5007V14ZM31.1673 39.018V44.3333C31.1673 45.6213 30.1243 46.6667 28.834 46.6667C27.5436 46.6667 26.5007 45.6213 26.5007 44.3333V39.018C25.1123 38.2083 24.1673 36.7197 24.1673 35C24.1673 32.4263 26.2603 30.3333 28.834 30.3333C31.4076 30.3333 33.5007 32.4263 33.5007 35C33.5007 36.7197 32.5557 38.2083 31.1673 39.018Z" fill="#667085" transform="translate(21.5, 22)"></path></svg></div>
+        <p>Locked</p>
+      </div>
+
+      <div class="unlocked-view">
+        <img src="https://cdn.shopify.com/s/files/1/0653/0629/6425/files/WhiteandBrownSimpleCoverBookMockupInstagramPost_2_c70867c6-7793-4af6-a0a9-297f49e43ab0_200x200.png?v=1760112005">
+        <p>Guided Lung Expansion Audio</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</div>
+
+
+
+
+<script>
+ 
+$(document).ready(function(){
+    $('input[name="selling_plan"]').remove();
+   $('kaching-bundle').remove();
+ $('.milk-thistile-bundle kaching-bundle').remove();
+setTimeout(function(){
+ {% comment %} $('.wrapper_bundles_with_subscripton .bundle-box').eq(2).trigger('click'); {% endcomment %}
+ 
+},1000);
+  $(document).on('click', '.bundle-box', function () {
+
+
+    $('.bundle-box').removeClass('active');
+    $(this).addClass('active');
+
+
+    let index = $(this).attr("data_index");
+    let var_id = $(this).attr("var_id");
+    let var_id_two = $(this).attr("var_id_two");
+    let var_id_three = $(this).attr("var_id_three");
+ let var_id_four = $(this).attr("var_id_four");
+    // Set main variant in form
+    $('.product-variant-id').val(var_id);
+
+
+  // Remove previous bundle items
+    $('.bundle-extra').remove();
+
+
+    // BUNDLE LOGIC
+    if (index == "1") {
+    $('.gift-item').removeClass('unlocked');
+    $('.gift-item').addClass('locked');
+    }
+
+
+    else if (index == "2") {
+          $('.gift-item[data_index="1"]').click();
+      $('.gift-item[data_index="2"]').click();
+       $('.gift-item[data_index="3"]').removeClass('unlocked');
+    $('.gift-item[data_index="3"]').addClass('locked');
+
+     $('.gift-item[data_index="4"]').removeClass('unlocked');
+    $('.gift-item[data_index="4"]').addClass('locked');
+
+        $('.product-form form').append(
+            '<input class="bundle-extra" type="hidden" name="items[1][id]" value="'+var_id_two+'">' +
+            '<input class="bundle-extra" type="hidden" name="items[1][quantity]" value="1">' 
+
+
+             
+        );
+    }
+
+
+    else if (index == "3") {
+         
+      $('.gift-item').click();
+        $('.product-form form').append(
+            '<input class="bundle-extra" type="hidden" name="items[1][id]" value="'+var_id_two+'">' +
+            '<input class="bundle-extra" type="hidden" name="items[1][quantity]" value="1">' +
+
+
+            '<input class="bundle-extra" type="hidden" name="items[2][id]" value="'+var_id_three+'">' +
+            '<input class="bundle-extra" type="hidden" name="items[2][quantity]" value="1">'+
+            '<input class="bundle-extra" type="hidden" name="items[3][id]" value="'+var_id_four+'">' +
+            '<input class="bundle-extra" type="hidden" name="items[3][quantity]" value="1">'
+
+
+            
+        );
+    }
+
+
+    
+
+  });
+
+
+});
+
+
+
+
+
+
+$(document).ready(function () {
+  var data_index = '';
+$('#subscriptionCheck').prop('checked', true); 
+  function toggleSubscription() {
+
+
+    // Get active bundle index first
+    $('.bundle-box.active').each(function () {
+      data_index = $(this).attr('data_index'); // or .data('index')
+    });
+
+
+    if ($('#subscriptionCheck').is(':checked')) {
+
+
+      $('#subscriptionBox').addClass('active');
+      $('.wrapper_bundles_with_subscripton').show();
+      $('.wrapper_bundles_without_subscripton').hide();
+
+
+      $('.wrapper_bundles_with_subscripton .bundle-box[data_index="' + data_index + '"]')
+        .trigger('click');
+
+
+    } else {
+
+
+      $('#subscriptionBox').removeClass('active');
+      $('.wrapper_bundles_with_subscripton').hide();
+      $('.wrapper_bundles_without_subscripton').show();
+
+
+      $('.wrapper_bundles_without_subscripton .bundle-box[data_index="' + data_index + '"]')
+        .trigger('click');
+    }
+  }
+
+
+  // Initial run
+  toggleSubscription();
+
+
+  // On checkbox change
+  $('#subscriptionCheck').on('change', function () {
+    toggleSubscription();
+  });
+
+
+});
+
+
+</script>
+<script>
+
+{% comment %} $(document).ready(function () {
+
+  $('.gift-item').click(function () {
+
+    // toggle state (on/off)
+    $(this).toggleClass('unlocked');
+    {% comment %} $(this).toggleClass('locked'); {% endcomment %}
+
+  });
+
+}); {% endcomment %}
+
+$(document).ready(function () {
+
+  $('.gift-item').click(function () {
+    var data_index = $(this).attr('data_index');
+
+    if ($(this).hasClass('unlocked')) {
+      return;
+    }
+
+    $(this).removeClass('locked').addClass('unlocked');
+
+    if (data_index == 1) {
+      $('.grid_wrapper_bd:visible .bundle-box[data_index="2"]').click();
+    } else if (data_index == 2) {
+      $('.grid_wrapper_bd:visible .bundle-box[data_index="2"]').click();
+      $('.gift-item[data_index="1"]').click();
+      $('.gift-item[data_index="2"]').click();
+    } else if (data_index == 3) {
+      $('.grid_wrapper_bd:visible .bundle-box[data_index="3"]').click();
+      $('.gift-item').click();
+    } else if (data_index == 4) {
+      $('.grid_wrapper_bd:visible .bundle-box[data_index="4"]').click();
+         $('.gift-item').click();
+    }
+  });
+
+});
+</script>
